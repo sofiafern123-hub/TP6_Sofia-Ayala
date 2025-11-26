@@ -17,6 +17,26 @@
   <main class="container">
     <h1>Menú horizontal clásico</h1>
     <p class="muted">Barra superior con hover subrayado y transición.</p>
+
+    <!-- Ejemplo: contenido para verificar que cargó el CSS -->
+    <section class="grid-3">
+      <div class="card glass">
+        <h2 class="card-title">Prueba de estilo</h2>
+        <p>Si ves fondo translúcido y bordes redondeados, el CSS está funcionando.</p>
+      </div>
+      <div class="card glass">
+        <h2 class="card-title">Rutas correctas</h2>
+        <p>Este archivo está en templates; por eso el CSS se importa con ../statics/styles.css.</p>
+      </div>
+      <div class="card glass">
+        <h2 class="card-title">Enlaces</h2>
+        <p>Los enlaces a multimedia usan ./ porque están en la misma carpeta.</p>
+      </div>
+    </section>
   </main>
+
+  <footer class="footer">
+    <p>© 2025 TP6 — Menú horizontal con estilos y animaciones.</p>
+  </footer>
 </body>
 </html>
