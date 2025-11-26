@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TP6 - Proyecto Formularios</title>
+  <link rel="stylesheet" href="./statics/styles.css"/>
+  <script defer src="./js/script_bienvenida.js"></script>
+</head>
+<body class="theme-default">
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <h1 class="title">Proyecto Formularios - TP6</h1>
+    <p class="description">Explora multimedia, menús estilizados y una bienvenida interactiva.</p>
+  </header>
+
+  <main class="container">
+    <section class="welcome-card glass">
+      <h2 class="section-title">Bienvenida</h2>
+      <p id="mensajeBienvenida" class="muted">Cargando mensaje...</p>
+
+      <form id="formNombre" class="inline-form" autocomplete="off">
+        <div class="field-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="field-group">
+          <label for="apellido">Apellido</label>
+          <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required />
+        </div>
+        <button type="submit" class="btn primary bounce">Guardar</button>
+      </form>
+
+      <div class="welcome-output">
+        <p class="muted">Usuario ingresado:</p>
+        <p id="nombreIngresado" class="user-pill">—</p>
+      </div>
+    </section>
+
+    <section class="buttons-grid">
+      <!-- Botón Desplegable 1 -->
+      <div class="dropdown">
+        <button class="btn secondary dropdown-toggle pulse" aria-haspopup="true" aria-expanded="false">
+          Multimedia
+          <span class="caret">▾</span>
+        </button>
+        <nav class="dropdown-menu">
+          <a href="./templates/multimedia1.html" class="dropdown-item">Multimedia 1 (Mapas)</a>
+          <a href="./templates/multimedia2.html" class="dropdown-item">Multimedia 2 (YouTube)</a>
+          <a href="./templates/multimedia3.html" class="dropdown-item">Multimedia 3 (Videos MP4 y Audio)</a>
+        </nav>
+      </div>
+
+      <!-- Botón Desplegable 2 -->
+      <div class="dropdown">
+        <button class="btn secondary dropdown-toggle pulse" aria-haspopup="true" aria-expanded="false">
+          Menús
+          <span class="caret">▾</span>
+        </button>
+        <nav class="dropdown-menu">
+          <a href="./templates/menu1.html" class="dropdown-item">Menú 1</a>
+          <a href="./templates/menu2.html" class="dropdown-item">Menú 2</a>
+          <a href="./templates/menu3.html" class="dropdown-item">Menú 3</a>
+        </nav>
+      </div>
+
+      <!-- Botón de Inicio -->
+      <a href="./index.html" class="btn success shine">Inicio</a>
+    </section>
+
+    <section class="gallery-hint">
+      <img src="./statics/images/cover.jpg" alt="Imagen temática del proyecto" class="cover-img"/>
+      <p class="muted">Personaliza esta imagen en statics/images/cover.jpg para tu proyecto.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 TP6 — Proyecto creativo con estilos, animaciones e imágenes.</p>
+  </footer>
+
+  <!-- Accesibilidad: cerrar dropdowns al hacer click fuera -->
+  <script>
+    document.addEventListener('click', (e) => {
+      const toggles = document.querySelectorAll('.dropdown');
+      toggles.forEach(drop => {
+        if (!drop.contains(e.target)) drop.classList.remove('open');
+      });
+    });
+    document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+      btn.addEventListener('click', () => btn.parentElement.classList.toggle('open'));
+    });
+  </script>
+</body>
+</html>
