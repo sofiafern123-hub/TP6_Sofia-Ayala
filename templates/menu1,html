@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menú 1 - Horizontal</title>
+  <link rel="stylesheet" href="../statics/styles.css"/>
+</head>
+<body class="theme-default">
+  <nav class="menu menu-horizontal glass">
+    <a href="../index.html" class="menu-item active">Inicio</a>
+    <a href="./multimedia1.html" class="menu-item">Mapas</a>
+    <a href="./multimedia2.html" class="menu-item">YouTube</a>
+    <a href="./multimedia3.html" class="menu-item">Video/Audio</a>
+  </nav>
+
+  <main class="container">
+    <h1>Menú horizontal clásico</h1>
+    <p class="muted">Barra superior con hover subrayado y transición.</p>
+  </main>
+</body>
+</html>
