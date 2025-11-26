@@ -1,0 +1,123 @@
+:root{
+  --bg:#0f1220;
+  --card:#141735cc;
+  --glass:rgba(255,255,255,0.06);
+  --text:#e6e9ef;
+  --muted:#aab0c0;
+  --primary:#7aa2f7;
+  --secondary:#9ece6a;
+  --success:#2dd4bf;
+  --accent:#f7768e;
+  --warning:#e0af68;
+  --shadow:0 8px 30px rgba(0,0,0,0.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body.theme-default{
+  background: radial-gradient(1200px 600px at 10% 0%, #1a1f35 0%, var(--bg) 60%);
+  color:var(--text); font-family:system-ui,Segoe UI,Roboto,Arial; line-height:1.6;
+}
+
+.hero{position:relative; padding:4rem 1rem; text-align:center}
+.hero-bg{
+  position:absolute; inset:0; background:
+    radial-gradient(600px 300px at 80% 30%, #23294a66, transparent 70%),
+    radial-gradient(500px 250px at 20% 60%, #2b316066, transparent 70%);
+  filter: blur(20px);
+}
+.title{position:relative; font-size:2.2rem; margin:0 0 .5rem}
+.description{position:relative; color:var(--muted); margin:0}
+
+.container{max-width:1100px; margin:0 auto; padding:2rem 1rem}
+.section-title{margin:0 0 .75rem}
+.muted{color:var(--muted)}
+.glass{background:var(--glass); border:1px solid #ffffff14; border-radius:14px; box-shadow:var(--shadow); backdrop-filter:saturate(1.2) blur(8px)}
+
+.inline-form{display:flex; gap:.75rem; flex-wrap:wrap; align-items:flex-end}
+.field-group{display:flex; flex-direction:column; gap:.35rem; min-width:220px}
+input[type="text"]{
+  padding:.7rem .9rem; border-radius:10px; border:1px solid #ffffff22; background:#0b0e1a; color:var(--text);
+  outline:none; transition:border .2s, transform .2s;
+}
+input[type="text"]:focus{border-color:var(--primary); transform:translateY(-1px)}
+
+.user-pill{margin:.25rem 0 0; display:inline-block; padding:.35rem .7rem; border-radius:999px; background:#0b0e1a; border:1px solid #ffffff1f}
+
+.buttons-grid{display:flex; gap:1rem; flex-wrap:wrap; margin:2rem 0}
+.btn{
+  display:inline-flex; align-items:center; gap:.5rem; padding:.75rem 1rem; border-radius:12px; text-decoration:none;
+  border:1px solid #ffffff1f; cursor:pointer; transition:transform .2s, box-shadow .2s, background .2s;
+}
+.btn.primary{background:linear-gradient(180deg,#314af2 0%,#1b2e6f 100%); color:white}
+.btn.secondary{background:linear-gradient(180deg,#4caf50 0%,#236f2b 100%); color:white}
+.btn.success{background:linear-gradient(180deg,#06b6d4 0%,#0a6675 100%); color:white}
+.btn:hover{transform:translateY(-2px); box-shadow:0 12px 24px #00000040}
+
+.bounce{animation:bounce 1.8s ease infinite}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.pulse{animation:pulse 2.2s ease-in-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(122,162,247,.6)}70%{box-shadow:0 0 0 16px rgba(122,162,247,0)}100%{box-shadow:0 0 0 0 rgba(122,162,247,0)}}
+.shine{position:relative; overflow:hidden}
+.shine::after{
+  content:""; position:absolute; inset:0; transform:translateX(-120%); background:linear-gradient(90deg,transparent 0%,#ffffff22 50%,transparent 100%);
+  animation:shine 2.8s infinite; pointer-events:none
+}
+@keyframes shine{0%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+
+.dropdown{position:relative}
+.dropdown-toggle .caret{opacity:.8}
+.dropdown.open .dropdown-menu{opacity:1; transform:translateY(0); pointer-events:auto}
+.dropdown-menu{
+  position:absolute; top:calc(100% + 8px); left:0; min-width:240px; background:#0b0e1a; border:1px solid #ffffff1f;
+  border-radius:12px; box-shadow:var(--shadow); padding:.4rem; display:flex; flex-direction:column; gap:.25rem;
+  opacity:0; transform:translateY(8px); transition:opacity .18s, transform .18s; pointer-events:none; z-index:20;
+}
+.dropdown-item{padding:.6rem .8rem; border-radius:8px; color:var(--text); text-decoration:none}
+.dropdown-item:hover{background:#121527}
+
+.cover-img{width:100%; max-height:280px; object-fit:cover; border-radius:16px; border:1px solid #ffffff1f}
+
+.grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; padding:1rem 1rem 2rem}
+@media (max-width:900px){.grid-3{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.grid-3{grid-template-columns:1fr}}
+
+.card{padding:1rem}
+.card-title{margin:.25rem 0 .75rem; font-weight:600}
+
+.map-frame, .yt-frame, .media{width:100%; aspect-ratio:16/9; border:0; border-radius:12px; background:#0b0e1a}
+
+.sub-header{display:flex; align-items:center; justify-content:space-between; padding:1rem 1rem .5rem}
+
+/* Menú 1: horizontal */
+.menu-horizontal{display:flex; gap:1rem; padding:.75rem 1rem; position:sticky; top:0}
+.menu-item{color:var(--text); text-decoration:none; padding:.5rem .75rem; border-radius:8px; position:relative}
+.menu-item::after{
+  content:""; position:absolute; left:.75rem; right:.75rem; bottom:.25rem; height:2px; background:transparent; transition:background .2s, transform .2s; transform:scaleX(0)
+}
+.menu-item:hover::after{background:var(--primary); transform:scaleX(1)}
+.menu-item.active{background:#0b0e1a}
+
+/* Menú 2: lateral */
+.with-sidebar{display:grid; grid-template-columns:260px 1fr}
+.sidebar{height:100vh; padding:1rem; position:sticky; top:0}
+.brand{font-weight:700; margin-bottom:1rem}
+.side-item{display:flex; align-items:center; gap:.6rem; color:var(--text); text-decoration:none; padding:.55rem .65rem; border-radius:10px}
+.side-item:hover{background:#121527}
+.content{padding:2rem}
+
+/* Menú 3: mosaico */
+.mosaic{display:grid; grid-template-columns:repeat(4,1fr); gap:1rem}
+@media (max-width:900px){.mosaic{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.mosaic{grid-template-columns:1fr}}
+.tile{position:relative; display:flex; align-items:flex-end; justify-content:flex-start; height:160px; border-radius:16px; overflow:hidden; text-decoration:none; padding:1rem; color:white}
+.tile::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%, rgba(0,0,0,.35) 100%)}
+.tile-title{position:relative; z-index:1; font-weight:600}
+.tile-1{background:linear-gradient(135deg,#3b82f6,#1e3a8a)}
+.tile-2{background:linear-gradient(135deg,#22c55e,#14532d)}
+.tile-3{background:linear-gradient(135deg,#f97316,#7c2d12)}
+.tile-4{background:linear-gradient(135deg,#a855f7,#3b0764)}
+.tile:hover{transform:scale(1.02)}
+
+/* Footer */
+.footer{padding:2rem 1rem; text-align:center; color:var(--muted)}
